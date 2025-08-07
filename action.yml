@@ -1,0 +1,28 @@
+name: '🚀 Cache Rocket'
+description: 'Supercharge your Turborepo builds with a blazing-fast remote cache server'
+author: 'freddyfallon'
+branding:
+  icon: zap
+  color: orange
+inputs:
+  storage-provider:
+    description: 'Cloud storage backend for cache persistence (s3, google-cloud-storage, azure-blob-storage)'
+    required: false
+  storage-path:
+    description: 'Target bucket or container name for storing cache artifacts'
+    required: false
+  team-id:
+    description: 'Team identifier for cache namespace isolation (configures TURBO_TEAM)'
+    required: false
+    default: 'ci'
+  host:
+    description: 'Cache server bind address for API endpoint configuration'
+    required: false
+    default: 'http://127.0.0.1'
+  port:
+    description: 'Custom port override (auto-discovered by default)'
+    required: false
+runs:
+  using: 'node20'
+  main: 'dist/start/index.js'
+  post: 'dist/post/index.js'

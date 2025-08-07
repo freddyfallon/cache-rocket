@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    // Base options
+    "target": "es2022",
+    "module": "commonjs",
+    "lib": ["es2022"],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+
+    // Strictness options
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+
+    // Build options
+    "outDir": "./dist",
+    "declaration": false,
+    "sourceMap": false,
+
+    // Additional good practices
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["src/**/*", "test/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
